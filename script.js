@@ -9,9 +9,9 @@ for (let index = 1; index <= 24; index++) {
 }
 
 let colorInput = document.body.querySelector(".header input");
-colorInput.value = getComputedStyle(document.documentElement).getPropertyValue(
-  "--color"
-);
+colorInput.value = getComputedStyle(document.documentElement)
+  .getPropertyValue("--color")
+  .trim();
 colorInput.addEventListener("input", () => {
   document.documentElement.style.setProperty("--color", colorInput.value);
 });
