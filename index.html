@@ -4,22 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roulette</title>
+    <title>Calendar</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="roulette.svg" />
+    <link rel="icon" href="calendarIco.png" />
   </head>
   <body>
     <div class="header">
-      <h1>ROULETTE</h1>
+      <h1>CALENDAR</h1>
       <input type="color" value="#116ADF" />
     </div>
-    <div class="roulette-input">
-      <input id="name" type="text" placeholder="Enter names here !" />
-      <button id="add">ADD</button>
-      <button id="delete">DELETE</button>
-      <button id="launch">LAUNCH</button>
+    <div class="calendar"></div>
+    <div class="container">
+      <div class="countdown">
+        <h3>Time until Christmas :</h3>
+        <time id="time"></time>
+      </div>
+      <div class="progressbarContainer">
+        <div class="progressbar"></div>
+      </div>
     </div>
-    <div class="roulette-display"></div>
     <script src="script.js"></script>
   </body>
 </html>
