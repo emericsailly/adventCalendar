@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 
 :root {
-  --color: #116adf;
+  --color: #df6e11;
 }
 
 * {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Zen Dots", cursive;
@@ -13,7 +14,7 @@
 
 body {
   background-color: rgb(38, 38, 38);
-  margin-top: 0;
+  height: 100vh;
 }
 
 .header {
@@ -21,12 +22,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 10px;
   text-shadow: 0 0 20px var(--color);
-  margin: 20px 0;
 }
 
 .header h1 {
-  margin: 0;
   color: var(--color);
   font-weight: bold;
   font-size: 4rem;
@@ -55,76 +55,67 @@ body {
   box-shadow: 0 0 10px 1px var(--color);
 }
 
-.calendar {
+.roulette-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.roulette-input input[type="text"] {
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  text-indent: 5px;
+  box-shadow: 0 0 10px 1px var(--color);
+}
+
+.roulette-input input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px 5px var(--color);
+}
+
+.roulette-input button {
+  background-color: var(--color);
+  height: 50px;
+  width: 120px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px var(--color);
+}
+
+.roulette-input button:hover {
+  box-shadow: 0 0 10px 5px var(--color);
+}
+
+.roulette-display {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
+  padding: 20px 0px;
 }
 
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 190px;
-  width: 190px;
-  border: 5px solid var(--color);
+  padding: 10px;
+  border: 3px solid var(--color);
   border-radius: 20px;
   color: var(--color);
   font-weight: bold;
-  font-size: 5rem;
-  box-shadow: 0 0 10px 1px var(--color);
-  cursor: pointer;
-}
-
-.box:hover {
-  color: rgb(38, 38, 38);
-  box-shadow: 0 0 10px 1px var(--color), inset 200px 0 var(--color);
-}
-
-.box.past {
-  color: rgb(38, 38, 38);
-  background-color: var(--color);
-}
-
-.container {
-  height: 140px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.countdown {
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--color);
-}
-
-.countdown h3 {
-  margin: 0;
-}
-
-.countdown time {
-  text-align: center;
   font-size: 3rem;
+  box-shadow: 0 0 10px 1px var(--color);
+  /* transition: all 5s; */
 }
 
-.progressbarContainer {
-  height: 30%;
-  width: 70%;
-  border: 5px solid var(--color);
-  border-radius: 10px;
-}
-
-.progressbar {
-  height: 100%;
+.box.chosen {
   background-color: var(--color);
+  color: rgb(38, 38, 38);
 }
 
 @media screen and (max-width: 700px) {
@@ -132,25 +123,22 @@ body {
     font-size: 2rem;
   }
 
-  .calendar {
+  .header input {
+    width: 30px;
+    height: 30px;
+  }
+
+  .roulette-display {
     gap: 15px;
   }
-
+  .roulette-input {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
   .box {
-    height: 100px;
-    width: 100px;
     border: 5px solid var(--color);
     border-radius: 10px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     box-shadow: 0 0 8px 1px var(--color);
-  }
-
-  .box:hover {
-    box-shadow: 0 0 8px 1px var(--color), inset 100px 0 var(--color);
-  }
-
-  .countdown time {
-    text-align: center;
-    font-size: 2rem;
   }
 }
