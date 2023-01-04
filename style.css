@@ -127,7 +127,7 @@ body {
   background-color: var(--color);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and ((max-width: 700px) or (max-height: 400px)) {
   .header h1 {
     font-size: 2rem;
   }
