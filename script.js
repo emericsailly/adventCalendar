@@ -3,7 +3,7 @@ for (let index = 1; index <= 24; index++) {
   newBox.classList.add("box");
   newBox.innerText = index;
   let today = new Date();
-  let boxDate = new Date("2022-12-" + index);
+  let boxDate = new Date("2023-12-" + index);
   if (today >= boxDate) newBox.classList.add("past");
   document.body.querySelector(".calendar").append(newBox);
 }
@@ -17,8 +17,8 @@ colorInput.addEventListener("input", () => {
 });
 
 // Set the date we're counting down to
-var countDownDate = new Date("2022-12-24").getTime();
-var startDate = new Date("2022-12-01").getTime();
+var countDownDate = new Date("2023-12-24").getTime();
+var startDate = new Date().getTime();
 var totalDistance = countDownDate - startDate;
 
 // Update the count down every 1 second
