@@ -10,8 +10,17 @@
   </head>
   <body>
     <div class="header">
-      <h1>CALENDAR</h1>
-      <input type="color" value="#116ADF" />
+      <div id="top">
+        <h1>CALENDAR</h1>
+        <button onclick="toggleColorPicker()"></button>
+      </div>
+      <div id="color-picker">
+        <button class="color" data-color="#e6c229"></button>
+        <button class="color" data-color="#f17105"></button>
+        <button class="color" data-color="#ff0048"></button>
+        <button class="color" data-color="#6610f2"></button>
+        <button class="color" data-color="#1a8fe3"></button>
+      </div>
     </div>
     <div class="calendar"></div>
     <div class="container">

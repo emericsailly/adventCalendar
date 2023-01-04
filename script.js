@@ -8,12 +8,19 @@ for (let index = 1; index <= 24; index++) {
   document.body.querySelector(".calendar").append(newBox);
 }
 
-let colorInput = document.body.querySelector(".header input");
-colorInput.value = getComputedStyle(document.documentElement)
-  .getPropertyValue("--color")
-  .trim();
-colorInput.addEventListener("input", () => {
-  document.documentElement.style.setProperty("--color", colorInput.value);
+function toggleColorPicker() {
+  document.getElementById("color-picker").classList.toggle("visible");
+}
+
+const allColorBtn = document.querySelectorAll("button.color");
+allColorBtn.forEach((colorBtn) => {
+  colorBtn.style.backgroundColor = colorBtn.dataset.color;
+  colorBtn.addEventListener("click", () => {
+    document.documentElement.style.setProperty(
+      "--color",
+      colorBtn.dataset.color
+    );
+  });
 });
 
 // Set the date we're counting down to

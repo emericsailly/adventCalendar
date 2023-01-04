@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
 
 :root {
-  --color: #116adf;
+  --color: #ff0048;
 }
 
 * {
@@ -20,39 +20,52 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  flex-direction: column;
   text-shadow: 0 0 20px var(--color);
   margin: 20px 0;
+  gap: 10px;
 }
-
-.header h1 {
+#top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#top h1 {
   margin: 0;
   color: var(--color);
   font-weight: bold;
   font-size: 4rem;
+  height: fit-content;
 }
 
-.header input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+#top > button {
   width: 50px;
   height: 50px;
-  background-color: transparent;
-  border: none;
+  background-color: var(--color);
   cursor: pointer;
-}
-
-.header input::-webkit-color-swatch {
   border-radius: 7.5px;
   border: none;
   box-shadow: 0 0 10px 1px var(--color);
 }
 
-.header input::-moz-color-swatch {
-  border-radius: 7.5px;
+#color-picker {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+#color-picker.visible {
+  display: flex;
+}
+
+button.color {
+  height: 50px;
+  width: 50px;
   border: none;
-  box-shadow: 0 0 10px 1px var(--color);
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .calendar {
@@ -128,10 +141,20 @@ body {
 }
 
 @media screen and ((max-width: 700px) or (max-height: 400px)) {
-  .header h1 {
+  #top h1 {
     font-size: 2rem;
   }
 
+  #top > button {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  button.color {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+  }
   .calendar {
     gap: 15px;
   }
